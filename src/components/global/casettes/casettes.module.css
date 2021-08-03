@@ -1,0 +1,49 @@
+.slidecards__card-title.n-1 {
+	color: #360F30;
+}
+
+.slidecards__card-title.n-2 {
+	color: #482F85;
+}
+
+.slidecards__card-title.n-3 {
+	color: #993E28;
+}
+
+.slidecards__card-title.n-4 {
+	color: #1F7E83;
+}
+
+.slidecards__card-title.n-5 {
+	color: #1F7E31;
+}
+
+.button-0 {
+	color: #360F30;
+	-webkit-box-shadow: -3px 3px 0 rgba(54, 15, 48, 0.9);
+	box-shadow: -3px 3px 0 rgba(54, 15, 48, 0.9);
+}
+
+.button-1 {
+	color: #482F85;
+	-webkit-box-shadow: -3px 3px 0 rgba(72, 47, 133, 0.9);
+	box-shadow: -3px 3px 0 rgba(72, 47, 133, 0.9);
+}
+
+.button-2 {
+	color: #993E28;
+	-webkit-box-shadow: -3px 3px 0 rgba(153, 62, 40, 0.9);
+	box-shadow: -3px 3px 0 rgba(153, 62, 40, 0.9);
+}
+
+.button-3 {
+	color: #1F7E83;
+	-webkit-box-shadow: -3px 3px 0 rgba(31, 126, 131, 0.9);
+	box-shadow: -3px 3px 0 rgba(31, 126, 131, 0.9);
+}
+
+.button.n-4 {
+	color: #1F7E31;
+	-webkit-box-shadow: -3px 3px 0 rgba(31, 126, 49, 0.9);
+	box-shadow: -3px 3px 0 rgba(31, 126, 49, 0.9);
+}
