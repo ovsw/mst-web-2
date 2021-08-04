@@ -61,6 +61,67 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     throw pagesQuery.errors
   }
 
+  // pages
+
+  const pages = pagesQuery.data.allSanityPage.edges || []
+  const pagesHidden = pagesQuery.data.allSanityPageHidden.edges || []
+
+  const allGeneralPages = [...pages, ...pagesHidden]
+
+  const performancePages = pagesQuery.data.allSanityPagePerformance.edges || []
+
+  const blogPostPages = pagesQuery.data.allSanityPost.edges || []
+
+  const wizardPages = pagesQuery.data.allSanityPageWizard.edges || []
+
+  allGeneralPages.forEach((edge, index) => {
+    const path = `/${edge.node._rawContent.main.slug.current === 'home' ? '' : edge.node._rawContent.main.slug.current}/`
+
+    reporter.info(`Creating page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/page.js'),
+      context: {...edge.node._rawContent}
+    })
+  })
+
+  performancePages.forEach((edge, index) => {
+    const path = `/performances/${edge.node._rawContent.main.slug.current}/`
+
+    reporter.info(`Creating performance page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/pagePerformance.js'),
+      context: {...edge.node._rawContent}
+    })
+  })
+
+  blogPostPages.forEach((edge, index) => {
+    const path = `/blog/${edge.node._rawContent.main.slug.current}/`
+
+    reporter.info(`Creating blog post page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/post.js'),
+      context: {...edge.node._rawContent}
+    })
+  })
+
+  wizardPages.forEach((edge, index) => {
+    const path = `/${edge.node._rawContent.main.slug.current}/`
+
+    reporter.info(`Creating wizard page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/wizard.js'),
+      context: {...edge.node._rawContent}
+    })
+  })
+
   // redirects
 
   // redirect home page to /virtual/
@@ -155,67 +216,6 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   redirectsList.forEach(({fromPath, toPath, isPermanent}) => {
     reporter.info(`Creating redirect: ${fromPath} -> ${toPath} - ${isPermanent ? '301' : '302'}`)
     createRedirect({fromPath, toPath, isPermanent})
-  })
-
-  // pages
-
-  const pages = pagesQuery.data.allSanityPage.edges || []
-  const pagesHidden = pagesQuery.data.allSanityPageHidden.edges || []
-
-  const allGeneralPages = [...pages, ...pagesHidden]
-
-  const performancePages = pagesQuery.data.allSanityPagePerformance.edges || []
-
-  const blogPostPages = pagesQuery.data.allSanityPost.edges || []
-
-  const wizardPages = pagesQuery.data.allSanityPageWizard.edges || []
-
-  allGeneralPages.forEach((edge, index) => {
-    const path = `/${edge.node._rawContent.main.slug.current === 'home' ? '' : edge.node._rawContent.main.slug.current}/`
-
-    reporter.info(`Creating page: ${path}`)
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/page.js'),
-      context: {...edge.node._rawContent}
-    })
-  })
-
-  performancePages.forEach((edge, index) => {
-    const path = `/performances/${edge.node._rawContent.main.slug.current}/`
-
-    reporter.info(`Creating performance page: ${path}`)
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/pagePerformance.js'),
-      context: {...edge.node._rawContent}
-    })
-  })
-
-  blogPostPages.forEach((edge, index) => {
-    const path = `/blog/${edge.node._rawContent.main.slug.current}/`
-
-    reporter.info(`Creating blog post page: ${path}`)
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/post.js'),
-      context: {...edge.node._rawContent}
-    })
-  })
-
-  wizardPages.forEach((edge, index) => {
-    const path = `/${edge.node._rawContent.main.slug.current}/`
-
-    reporter.info(`Creating wizard page: ${path}`)
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/wizard.js'),
-      context: {...edge.node._rawContent}
-    })
   })
 
   // Query Products
