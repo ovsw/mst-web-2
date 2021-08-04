@@ -14,21 +14,21 @@ const clientConfig = require('./client-config')
 
 const isProd = process.env.NODE_ENV === 'production'
 
-const {createProxyMiddleware} = require('http-proxy-middleware')
+// const {createProxyMiddleware} = require('http-proxy-middleware')
 
 module.exports = {
   /* Your site config here */
-  developMiddleware: app => {
-    app.use(
-      '/.netlify/functions/',
-      createProxyMiddleware({
-        target: 'http://localhost:34567',
-        pathRewrite: {
-          '/.netlify/functions/': ''
-        }
-      })
-    )
-  },
+  // developMiddleware: app => {
+  //   app.use(
+  //     '/.netlify/functions/',
+  //     createProxyMiddleware({
+  //       target: 'http://localhost:34567',
+  //       pathRewrite: {
+  //         '/.netlify/functions/': ''
+  //       }
+  //     })
+  //   )
+  // },
   siteMetadata: {
     siteUrl: 'https://www.mainstages.com'
   },
