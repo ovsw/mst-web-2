@@ -14,25 +14,25 @@ const Nav = ({isMobileNavOpen, closeMobileNav}) => {
   const menuStructure = useSiteMenusStructure()
   const {activeSisteSection} = useContext(appContext)
 
-  let menuToShow = null
+  // let menuToShow = null
 
-  switch (activeSisteSection) {
-    case 'virtual':
-      menuToShow = menuStructure.filter(menu =>
-        menu.id === '520e71b4-3698-5363-8839-8f77332aa571'
-      )[0]
-      break
-    case 'programming':
-      menuToShow = menuStructure.filter(menu =>
-        menu.id === '37f6f332-c2e8-5c5c-affc-74bf0f5aa765'
-      )[0]
-      break
-    case 'performances':
-      menuToShow = menuStructure.filter(menu =>
-        menu.id === '5f27afbc-dcbd-5cfb-8c05-f55182adcfa1'
-      )[0]
-      break
-  }
+  // switch (activeSisteSection) {
+  //   case 'virtual':
+  //     menuToShow = menuStructure.filter(menu =>
+  //       menu.id === '520e71b4-3698-5363-8839-8f77332aa571'
+  //     )[0]
+  //     break
+  //   case 'programming':
+  //     menuToShow = menuStructure.filter(menu =>
+  //       menu.id === '37f6f332-c2e8-5c5c-affc-74bf0f5aa765'
+  //     )[0]
+  //     break
+  //   case 'performances':
+  //     menuToShow = menuStructure.filter(menu =>
+  //       menu.id === '5f27afbc-dcbd-5cfb-8c05-f55182adcfa1'
+  //     )[0]
+  //     break
+  // }
   return (
     <nav className={`top-nav__header-menu ${isMobileNavOpen ? 'visible' : ''}`}>
       <div className='top-nav__main-menu-wrapper'>
@@ -47,7 +47,7 @@ const Nav = ({isMobileNavOpen, closeMobileNav}) => {
             </div>
           </div>
           <ul className='top-nav__outer-list' id='menu-main-menu'>
-            {menuToShow.items.map((item) => {
+            {/* menuToShow.items.map((item) => {
               // console.log(item)
               let linkUrl = null
               let title = null
@@ -75,7 +75,7 @@ const Nav = ({isMobileNavOpen, closeMobileNav}) => {
                   {(subItems.length > 0) && <SubMenu subItems={subItems} closeMobileNav={closeMobileNav} />}
                 </li>
               )
-            })}
+            })*/}
           </ul>
         </div>
 
