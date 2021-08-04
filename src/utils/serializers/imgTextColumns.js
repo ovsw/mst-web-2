@@ -2,8 +2,6 @@
 import {jsx} from 'theme-ui'
 import React from 'react' // eslint-disable-line
 // import Img from 'gatsby-image'
-// import {getFluidGatsbyImage} from 'gatsby-source-sanity'
-// import clientConfig from '../../../client-config'
 
 import BlockContent from '@sanity/block-content-to-react'
 import serializers from './index'
