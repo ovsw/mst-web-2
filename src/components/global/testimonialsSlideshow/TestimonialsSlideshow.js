@@ -12,6 +12,7 @@ import './TestimonialSlider.css';
 
 const TestimonialsSlideshow = ({ data }) => {
   const { testimonials } = data;
+
   const slickSettings = {
     dots: true,
     infinite: true,
@@ -48,9 +49,9 @@ const TestimonialsSlideshow = ({ data }) => {
       }}
     >
       <Slider {...slickSettings}>
-        {testimonials.map(({ _id, content, name, role }) => (
+        {testimonials.map(({ _key, content, name, role }) => (
           <TestimonialSlide
-            key={_id}
+            key={_key}
             content={content}
             name={name}
             role={role}
