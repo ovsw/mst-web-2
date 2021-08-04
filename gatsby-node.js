@@ -9,11 +9,6 @@
 exports.createPages = async ({graphql, actions, reporter}) => {
   const {createRedirect, createPage} = actions
 
-  // fs.writeFile('./static/helloworld.txt', 'Hello World!', function (err) {
-  //   if (err) return console.log(err)
-  //   console.log('Hello World > helloworld.txt')
-  // })
-
   // Query Pages
   const pagesQuery = await graphql(`
     {
