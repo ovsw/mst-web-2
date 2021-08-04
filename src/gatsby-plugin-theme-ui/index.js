@@ -24,7 +24,7 @@ const sharedHeadingStyles = {
   color: 'secondary',
 };
 
-export default {
+const myTheme = {
   ...breakpoints,
   ...typography,
   ...colors,
@@ -209,3 +209,5 @@ export default {
     },
   },
 };
+
+export default myTheme;

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Styled } from 'theme-ui';
+import { jsx, Container, Themed } from 'theme-ui';
 import React from 'react'; // eslint-disable-line
 import { mapEdgesToNodes } from '../utils/helpers';
 
@@ -11,9 +11,8 @@ const PerformancesList = ({ performanceData }) => {
     <section sx={{ variant: 'sections.default' }}>
       <div sx={{ variant: 'styles' }}>
         <Container sx={{ maxWidth: '760px' }}>
-          <a id="interactive-experiences" />
-          <Styled.h1>Performance Directory</Styled.h1>
-          <h2>Interactive Performances</h2>
+          <Themed.h1>Performance Directory</Themed.h1>
+          <h2 id="interactive-experiences">Interactive Performances</h2>
           <p>
             These character-driven adventures mix puppetry and storytelling with
             high-participation games and activities. Interactive performances
@@ -27,8 +26,7 @@ const PerformancesList = ({ performanceData }) => {
         />
 
         <Container sx={{ maxWidth: '760px' }}>
-          <a id="game-shows" />
-          <h2>Game Shows</h2>
+          <h2 id="game-shows">Game Shows</h2>
           <p>
             The perfect mix of lightning fast trivia, physical challenges,
             digital media, and hit music, our game shows guarantee a high-impact
@@ -50,8 +48,7 @@ const PerformancesList = ({ performanceData }) => {
         />
 
         <Container sx={{ maxWidth: '760px' }}>
-          <a id="perform-judaism" />
-          <h2>Perform Judaism</h2>
+          <h2 id="perform-judaism">Perform Judaism</h2>
           <p>
             We engage and entertain participants while exploring relevant themes
             in Jewish education including social action, Israel, tradition,
@@ -70,8 +67,7 @@ const PerformancesList = ({ performanceData }) => {
         />
 
         <Container sx={{ maxWidth: '760px' }}>
-          <a id="mystery-shows" />
-          <h2>Mystery Shows</h2>
+          <h2 id="mystery-shows">Mystery Shows</h2>
           <p>
             Just like the board game “Clue,” your audience becomes part of an
             interactive mystery that unravels in real time.{' '}
@@ -92,8 +88,7 @@ const PerformancesList = ({ performanceData }) => {
         />
 
         <Container sx={{ maxWidth: '760px' }}>
-          <a id="custom-experiences" />
-          <h2>Custom Experiences</h2>
+          <h2 id="custom-experiences">Custom Experiences</h2>
           <p>
             Our custom experiences are the ideal option to specifically suit a
             performance to a targeted event, theme, or value. Tell us your

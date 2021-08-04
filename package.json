@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
     "build:lambda": "netlify-lambda build functions",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -21,7 +21,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
     "framer-motion": "^4.1.17",
-    "gatsby": "^3.10.2",
+    "gatsby": "3.10.1",
     "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^3.10.0",
     "gatsby-plugin-anchor-links": "^1.1.1",
@@ -32,7 +32,6 @@
     "gatsby-plugin-layout": "^2.10.0",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-netlify": "^3.10.0",
-    "gatsby-plugin-prettier-eslint": "^1.0.6",
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-plugin-sitemap": "^4.6.0",
     "gatsby-plugin-theme-ui": "^0.10.1",
@@ -56,7 +55,6 @@
     "dotenv": "^10.0.0",
     "gatsby-plugin-react-helmet": "^4.10.0",
     "gatsby-source-sanity": "^7.0.7",
-    "react-helmet": "^6.1.0",
-    "react-hot-loader": "^4.12.21"
+    "react-helmet": "^6.1.0"
   }
 }

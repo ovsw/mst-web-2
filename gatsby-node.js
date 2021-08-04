@@ -6,140 +6,78 @@
 
 // const fs = require('fs')
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createRedirect, createPage } = actions;
-
-  // Query Pages
-  const pagesQuery = await graphql(`
+async function createGenericPages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
     {
       allSanityPage(
-        filter: { content: { main: { slug: { current: { ne: null } } } } }
+        filter: { content: { main: { slug: { current: { ne: "null" } } } } }
       ) {
         edges {
           node {
-            _rawContent(resolveReferences: { maxDepth: 9 })
+            id
+            content {
+              main {
+                slug {
+                  current
+                }
+              }
+            }
           }
         }
       }
       allSanityPageHidden(
-        filter: { content: { main: { slug: { current: { ne: null } } } } }
+        filter: { content: { main: { slug: { current: { ne: "null" } } } } }
       ) {
         edges {
           node {
-            _rawContent(resolveReferences: { maxDepth: 9 })
+            id
+            content {
+              main {
+                slug {
+                  current
+                }
+              }
+            }
           }
-        }
-      }
-      allSanityPagePerformance(
-        filter: { content: { main: { slug: { current: { ne: null } } } } }
-      ) {
-        edges {
-          node {
-            _rawContent(resolveReferences: { maxDepth: 9 })
-          }
-        }
-      }
-      allSanityPost(
-        filter: {
-          content: {
-            main: { publishedAt: { ne: null }, slug: { current: { ne: null } } }
-          }
-        }
-        sort: { fields: content___main___publishedAt, order: DESC }
-      ) {
-        edges {
-          node {
-            _rawContent(resolveReferences: { maxDepth: 9 })
-          }
-        }
-      }
-      allSanityPageWizard {
-        edges {
-          node {
-            _rawContent(resolveReferences: { maxDepth: 9 })
-          }
-        }
-      }
-      sanityRedirects(_id: { eq: "redirects" }) {
-        list {
-          fromPath
-          toPath
-          isPermanent
         }
       }
     }
   `);
 
-  if (pagesQuery.errors) {
-    throw pagesQuery.errors;
-  }
+  if (result.errors) throw result.errors;
 
-  // pages
+  const pageEdges = (result.data.allSanityPage || {}).edges || [];
+  const pageHiddenEdges = (result.data.allSanityPageHidden || {}).edges || [];
 
-  const pages = pagesQuery.data.allSanityPage.edges || [];
-  const pagesHidden = pagesQuery.data.allSanityPageHidden.edges || [];
+  const allPageEdges = [...pageEdges, ...pageHiddenEdges];
 
-  const allGeneralPages = [...pages, ...pagesHidden];
-
-  const performancePages = pagesQuery.data.allSanityPagePerformance.edges || [];
-
-  const blogPostPages = pagesQuery.data.allSanityPost.edges || [];
-
-  const wizardPages = pagesQuery.data.allSanityPageWizard.edges || [];
-
-  allGeneralPages.forEach((edge) => {
-    const path = `/${
-      edge.node._rawContent.main.slug.current === 'home'
-        ? ''
-        : edge.node._rawContent.main.slug.current
-    }/`;
+  allPageEdges.forEach((edge) => {
+    const {
+      id,
+      content: {
+        main: { slug },
+      },
+      // seoNoIndex
+    } = edge.node;
+    const path = `/${slug.current}/`;
 
     reporter.info(`Creating page: ${path}`);
 
     createPage({
       path,
       component: require.resolve('./src/templates/page.js'),
-      context: { ...edge.node._rawContent },
+      context: { id },
     });
   });
+}
 
-  performancePages.forEach((edge) => {
-    const path = `/performances/${edge.node._rawContent.main.slug.current}/`;
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createRedirect } = actions;
+  // await createBlogPages(graphql, actions, reporter);
+  await createGenericPages(graphql, actions, reporter);
 
-    reporter.info(`Creating performance page: ${path}`);
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/pagePerformance.js'),
-      context: { ...edge.node._rawContent },
-    });
-  });
-
-  blogPostPages.forEach((edge) => {
-    const path = `/blog/${edge.node._rawContent.main.slug.current}/`;
-
-    reporter.info(`Creating blog post page: ${path}`);
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/post.js'),
-      context: { ...edge.node._rawContent },
-    });
-  });
-
-  wizardPages.forEach((edge) => {
-    const path = `/${edge.node._rawContent.main.slug.current}/`;
-
-    reporter.info(`Creating wizard page: ${path}`);
-
-    createPage({
-      path,
-      component: require.resolve('./src/templates/wizard.js'),
-      context: { ...edge.node._rawContent },
-    });
-  });
-
-  // redirects
+  // REDIRECTS
 
   // redirect home page to /virtual/
   createRedirect({
@@ -476,8 +414,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     isPermanent: true,
   });
 
+  const redirectsQuery = await graphql(`
+    {
+      sanityRedirects(_id: { eq: "redirects" }) {
+        list {
+          fromPath
+          toPath
+          isPermanent
+        }
+      }
+    }
+  `);
+
   // process redirects from Sanity
-  const redirectsList = pagesQuery.data.sanityRedirects.list || [];
+  const redirectsList = redirectsQuery.data.sanityRedirects.list || [];
   redirectsList.forEach(({ fromPath, toPath, isPermanent }) => {
     reporter.info(
       `Creating redirect: ${fromPath} -> ${toPath} - ${
@@ -486,60 +436,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     );
     createRedirect({ fromPath, toPath, isPermanent });
   });
-
-  // Query Products
-  //   const productsQuery = await graphql(`
-  //   {
-  //     allSanityProduct {
-  //       edges {
-  //         node {
-  //           _rawContent(resolveReferences: {maxDepth: 9})
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  //   if (productsQuery.errors) {
-  //     throw productsQuery.errors
-  //   }
-
-  //   const products = productsQuery.data.allSanityProduct.edges || []
-  //   products.forEach((edge, index) => {
-  //   const path = `/products/${edge.node._rawContent.main.slug.current}`
-
-  //     createPage({
-  //       path,
-  //       component: require.resolve('./src/templates/product.tsx'),
-  //       context: {...edge.node._rawContent},
-  //     })
-  //   })
-
-  //   // Query Collections
-  //   const collectionsQuery = await graphql(`
-  //   {
-  //     allSanityCollection {
-  //       edges {
-  //         node {
-  //           _rawContent(resolveReferences: {maxDepth: 9})
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  //   if (collectionsQuery.errors) {
-  //     throw collectionsQuery.errors
-  //   }
-
-  //   const collections = collectionsQuery.data.allSanityCollection.edges || []
-  //   collections.forEach((edge, index) => {
-  //     const path = `/collection/${edge.node._rawContent.main.slug.current}`
-
-  //     createPage({
-  //       path,
-  //       component: require.resolve('./src/templates/page.tsx'),
-  //       context: {...edge.node._rawContent},
-  //     })
-  //   })
 };

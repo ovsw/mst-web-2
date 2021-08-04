@@ -22,6 +22,8 @@ const AppContextProvider = (props) => {
   );
 };
 
-export default ({ element }) => (
+const exportMe = ({ element }) => (
   <AppContextProvider>{element}</AppContextProvider>
 );
+
+export default exportMe;

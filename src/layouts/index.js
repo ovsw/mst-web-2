@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import LayoutWrapper from '../components/layout';
-import { hot } from 'react-hot-loader/root';
 import Helmet from 'react-helmet';
 
 // import {useSiteMenusStructure} from '../hooks/use-site-menus-structure'
@@ -39,4 +38,4 @@ const Layout = ({ path, children }) => {
   );
 };
 
-export default hot(Layout);
+export default Layout;
