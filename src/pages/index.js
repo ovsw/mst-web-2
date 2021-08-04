@@ -5,7 +5,7 @@ import React, {useEffect} from 'react' // eslint-disable-line
 // import {mapEdgesToNodes, localizeText} from '../lib/helpers'
 // import Img from 'gatsby-image'
 
-export default () => {
+export default function HomePage () {
   // const productsEdges = data && data.homeProducts
   // const productsNodes = mapEdgesToNodes(productsEdges)
 

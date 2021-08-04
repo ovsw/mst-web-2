@@ -7,7 +7,7 @@ import {graphql} from 'gatsby'
 // import {mapEdgesToNodes, localizeText} from '../lib/helpers'
 import BackgroundImage from 'gatsby-background-image'
 
-export default ({data}) => {
+const FourOhFourPage = ({data}) => {
   // const productsEdges = data && data.homeProducts
   // const productsNodes = mapEdgesToNodes(productsEdges)
 
@@ -47,3 +47,4 @@ export const query = graphql`
     }
   }
 `
+export default FourOhFourPage
