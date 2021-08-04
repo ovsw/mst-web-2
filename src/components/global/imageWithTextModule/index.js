@@ -5,15 +5,17 @@ import React from 'react' // eslint-disable-line
 // import {buildImageObj} from '../../utils/helpers' // cn
 // import {imageUrlFor} from '../../utils/image-url'
 
-import FloatedImageWText from './floatedImageWText'
-import BlockImageWText from './blockImageWText'
+// import FloatedImageWText from './floatedImageWText'
+// import BlockImageWText from './blockImageWText'
 
 const ImageWTextOverModule = ({data}) => {
   const {theme} = data
   return (
     <>
-      {theme === 'overlapping' && <FloatedImageWText {...data} />}
-      {theme === 'sideBySide' && <BlockImageWText {...data} />}
+      {/* {theme === 'overlapping' && <FloatedImageWText {...data} />}
+      {theme === 'sideBySide' && <BlockImageWText {...data} />} */}
+      {theme === 'overlapping' && <p>Text Overlapping w Image</p>}
+      {theme === 'sideBySide' && <p>Text Side by side w Image</p>}
     </>
   )
 }
