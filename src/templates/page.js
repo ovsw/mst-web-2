@@ -4,7 +4,7 @@ import React from 'react'; // eslint-disable-line
 import { graphql } from 'gatsby';
 
 import Seo from '../components/seo';
-// import RenderModules from '../utils/renderModules';
+import RenderModules from '../utils/renderModules';
 // import {graphql, Link} from 'gatsby'
 
 const Page = (props) => {
@@ -15,8 +15,8 @@ const Page = (props) => {
   return (
     <>
       <Seo metaInfo={page._rawMeta} pagePath={page.main.slug.current} />
-      {/* {RenderModules(modules)} */}
-      <p>{JSON.stringify(page._rawMeta)}</p>
+      {RenderModules(page.main._rawModules)}
+      {/* <p>{JSON.stringify(page._rawMeta)}</p> */}
     </>
   );
 };
@@ -31,7 +31,7 @@ export const query = graphql`
           slug {
             current
           }
-          _rawModules
+          _rawModules(resolveReferences: { maxDepth: 9 })
           title
         }
         _rawMeta(resolveReferences: { maxDepth: 9 })
