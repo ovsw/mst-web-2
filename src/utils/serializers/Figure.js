@@ -8,7 +8,7 @@ import React from 'react'; // eslint-disable-line
 import { buildImageObj } from '../helpers'; // cn
 import { imageUrlFor } from '../image-url';
 
-export default ({ node }) => {
+export default function Figure({ node }) {
   // console.log('node:', node)
   const thumbSize = { width: 800, height: 400 };
   const imageUrl = imageUrlFor(buildImageObj(node.image))
@@ -25,7 +25,7 @@ export default ({ node }) => {
       </figcaption>
     </figure>
   );
-};
+}
 
 // export default ({node}) => {
 //   // console.log(node.asset.metadata.dimensions.width)

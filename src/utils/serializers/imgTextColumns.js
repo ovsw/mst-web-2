@@ -9,7 +9,7 @@ import serializers from './index';
 import { buildImageObj } from '../helpers'; // cn
 import { imageUrlFor } from '../image-url';
 
-export default ({ node }) => {
+export default function ImgtextColumns({ node }) {
   const thumbSize = { width: 200, height: 200 };
   const imageUrl = imageUrlFor(buildImageObj(node.image))
     .width(thumbSize.width)
@@ -34,7 +34,7 @@ export default ({ node }) => {
       </div>
     </div>
   );
-};
+}
 
 const styles = {
   mx: [0, null, null, '-8rem'],

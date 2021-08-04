@@ -3,7 +3,7 @@ import React from 'react'; // eslint-disable-line
 import { jsx } from 'theme-ui';
 import { FaFileAlt } from 'react-icons/fa';
 
-export default ({ node }) => {
+export default function File({ node }) {
   return (
     <a
       href={node.file.asset.url}
@@ -14,4 +14,4 @@ export default ({ node }) => {
       <FaFileAlt sx={{ position: 'relative', top: '2px' }} /> {node.description}
     </a>
   );
-};
+}

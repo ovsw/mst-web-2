@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import JotFormEmbed from './jotformEmbed';
 
-export default ({ node }) => {
+export default function Embed({ node }) {
   let helmetCode = '';
   switch (node.embedType) {
     case 'jotForm':
@@ -38,4 +38,4 @@ export default ({ node }) => {
       {node.embedType === 'jotForm' && <JotFormEmbed jotFormUrl={node.code} />}
     </>
   );
-};
+}

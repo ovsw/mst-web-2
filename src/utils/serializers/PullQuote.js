@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import React from 'react'; // eslint-disable-line
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 
-export default ({ node }) => {
+export default function PullQuote({ node }) {
   return (
     <div
       sx={{
@@ -52,4 +52,4 @@ export default ({ node }) => {
       </blockquote>
     </div>
   );
-};
+}

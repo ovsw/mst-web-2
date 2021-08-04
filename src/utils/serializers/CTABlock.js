@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { FaChevronRight } from 'react-icons/fa';
 import isAbsoluteURL from 'is-absolute-url';
 
-export default ({ node }) => {
+export default function CTABlock({ node }) {
   return (
     <div
       sx={{
@@ -42,4 +42,4 @@ export default ({ node }) => {
       </div>
     </div>
   );
-};
+}

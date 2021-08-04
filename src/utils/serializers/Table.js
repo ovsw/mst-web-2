@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ node }) => {
+export default function Table({ node }) {
   return (
     <table>
       <tbody>
@@ -17,4 +17,4 @@ export default ({ node }) => {
       </tbody>
     </table>
   );
-};
+}

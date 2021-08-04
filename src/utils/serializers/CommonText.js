@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 import serializers from './index';
 
-export default ({ node }) => {
+export default function CommonText({ node }) {
   return (
     <div>
       <BlockContent
@@ -14,4 +14,4 @@ export default ({ node }) => {
       />
     </div>
   );
-};
+}

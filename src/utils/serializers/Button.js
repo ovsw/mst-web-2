@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import isAbsoluteURL from 'is-absolute-url';
 import { FaChevronRight } from 'react-icons/fa';
 
-export default ({ node }) => {
+export default function Button({ node }) {
   return (
     <div sx={{ textAlign: 'left', mt: 3 }}>
       {isAbsoluteURL(node.url) ? (
@@ -26,4 +26,4 @@ export default ({ node }) => {
       )}
     </div>
   );
-};
+}
