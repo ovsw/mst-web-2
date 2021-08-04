@@ -10,28 +10,31 @@ import ImageWTextModule from './global/imageWithTextModule';
 import SectionWithItems from './global/sectionWithItems';
 import PricingTable from './global/pricingTable';
 
-const Modules = ({ reactModule, type }) => {
-  switch (type) {
+const Modules = ({ module }) => {
+  // console.log(module);
+  switch (module._type) {
     case 'standardText':
-      return <StandardText data={reactModule} />;
+      return <StandardText data={module} />;
     // case 'imageModule':
-    //   return <ContentImage data={reactModule} />
+    //   return <ContentImage data={module} />
     case 'videoHero':
-      return <VideoHero data={reactModule} />;
+      return <VideoHero data={module} />;
     case 'casettes':
-      return <Casettes data={reactModule} />;
+      return <Casettes data={module} />;
     case 'testimonials':
-      return <Testimonials data={reactModule} />;
+      return <Testimonials module={module} />;
     case 'heroInnerModule':
-      return <HeroInnerModule data={reactModule} />;
+      return <HeroInnerModule data={module} />;
     case 'imageWTextOverModule':
-      return <ImageWTextModule data={reactModule} />;
+      return <ImageWTextModule data={module} />;
     case 'sectionWithItems':
-      return <SectionWithItems data={reactModule} />;
+      return <SectionWithItems data={module} />;
     case 'pricingTableRef':
-      return <PricingTable data={reactModule} />;
+      return <PricingTable data={module} />;
     default:
-      return <span>{type}</span>;
+      return (
+        <span>module of type: {module._type} not found in front-end.</span>
+      );
   }
 };
 

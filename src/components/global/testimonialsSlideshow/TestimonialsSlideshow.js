@@ -10,8 +10,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './TestimonialSlider.css';
 
-const TestimonialsSlideshow = ({ data }) => {
-  const { testimonials } = data;
+const TestimonialsSlideshow = ({ module }) => {
+  const { testimonials } = module;
 
   const slickSettings = {
     dots: true,

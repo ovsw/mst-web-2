@@ -4,7 +4,9 @@ import React, { useContext } from 'react'; // eslint-disable-line
 import BlockContent from '@sanity/block-content-to-react';
 // import {Link} from 'gatsby'
 
-const TestimonialSlide = ({ content, name, role }) => {
+const TestimonialSlide = (props) => {
+  const { content, name, role } = props;
+
   return (
     <div className="testimonial-slider__content">
       <div className="testimonial-slider__text">
