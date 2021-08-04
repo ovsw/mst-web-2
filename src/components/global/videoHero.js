@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react'
 import serializers from '../../utils/serializers'
 import {Link} from 'gatsby'
 
-import s from './videoHero.module.css'
+import * as s from './videoHero.module.css'
 
 const VideoHero = ({data}) => {
   const {buttonText, text, title, url, video} = data
