@@ -1,18 +1,21 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React, {useContext} from 'react' // eslint-disable-line
-import {Link} from 'gatsby'
-import SubMenu from './SubMenu'
+import { jsx } from 'theme-ui';
+import React, { useContext } from 'react'; // eslint-disable-line
+import { Link } from 'gatsby';
+// import SubMenu from './SubMenu';
 
-import './Nav.css'
+import './Nav.css';
 
-import {useSiteMenusStructure} from '../../../hooks/use-site-menus-structure'
-import {appContext} from '../../../context'
-import {FaPhone} from 'react-icons/fa'
+// import { useSiteMenusStructure } from '../../../hooks/use-site-menus-structure';
+import { appContext } from '../../../context';
+import { FaPhone } from 'react-icons/fa';
 
-const Nav = ({isMobileNavOpen, closeMobileNav}) => {
-  const menuStructure = useSiteMenusStructure()
-  const {activeSisteSection} = useContext(appContext)
+const Nav = ({
+  isMobileNavOpen,
+  // closeMobileNav
+}) => {
+  // const menuStructure = useSiteMenusStructure();
+  const { activeSisteSection } = useContext(appContext);
 
   // let menuToShow = null
 
@@ -35,18 +38,49 @@ const Nav = ({isMobileNavOpen, closeMobileNav}) => {
   // }
   return (
     <nav className={`top-nav__header-menu ${isMobileNavOpen ? 'visible' : ''}`}>
-      <div className='top-nav__main-menu-wrapper'>
-        <div className='top-nav__menus' sx={{maxHeight: '90vh', paddingBottom: '10vh'}}>
-          <p className='top-nav__mobile-title'>Mainstages</p>
-          <div className='menu-cross-links'>
-            <span className='menu-cross-links__title' sx={{display: ['none', null, 'block']}}><a href='tel:1-347-878-2431'><FaPhone /> 347-878-2431</a></span>
+      <div className="top-nav__main-menu-wrapper">
+        <div
+          className="top-nav__menus"
+          sx={{ maxHeight: '90vh', paddingBottom: '10vh' }}
+        >
+          <p className="top-nav__mobile-title">Mainstages</p>
+          <div className="menu-cross-links">
+            <span
+              className="menu-cross-links__title"
+              sx={{ display: ['none', null, 'block'] }}
+            >
+              <a href="tel:1-347-878-2431">
+                <FaPhone /> 347-878-2431
+              </a>
+            </span>
             <div sx={mobileSectionButtonsStyles}>
-              <Link to='/virtual/' className={`${activeSisteSection === 'virtual' ? 'active' : ''}`}><span>Virtual Entertainment</span></Link>
-              <Link to='/programming/' className={`${activeSisteSection === 'programming' ? 'active' : ''}`}><span>In-person Programs</span></Link>
-              <Link to='/performances/' className={`${activeSisteSection === 'performances' ? 'active' : ''}`}><span>In-person Performances</span></Link>
+              <Link
+                to="/virtual/"
+                className={`${
+                  activeSisteSection === 'virtual' ? 'active' : ''
+                }`}
+              >
+                <span>Virtual Entertainment</span>
+              </Link>
+              <Link
+                to="/programming/"
+                className={`${
+                  activeSisteSection === 'programming' ? 'active' : ''
+                }`}
+              >
+                <span>In-person Programs</span>
+              </Link>
+              <Link
+                to="/performances/"
+                className={`${
+                  activeSisteSection === 'performances' ? 'active' : ''
+                }`}
+              >
+                <span>In-person Performances</span>
+              </Link>
             </div>
           </div>
-          <ul className='top-nav__outer-list' id='menu-main-menu'>
+          <ul className="top-nav__outer-list" id="menu-main-menu">
             {/* menuToShow.items.map((item) => {
               // console.log(item)
               let linkUrl = null
@@ -78,20 +112,44 @@ const Nav = ({isMobileNavOpen, closeMobileNav}) => {
             })*/}
           </ul>
         </div>
-
       </div>
-      <div className='top-nav__image-buttons-wrapper'>
-        <Link to='/virtual/' className={`image-button ${activeSisteSection !== 'virtual' ? 'sectionSwitch_btn--virtual' : ''}`}><span>Virtual Entertainment</span></Link>
-        <Link to='/programming/' className={`image-button ${activeSisteSection !== 'programming' ? 'sectionSwitch_btn--programming' : ''}`}><span>In-person Programs</span></Link>
-        <Link to='/performances/' className={`image-button ${activeSisteSection !== 'performances' ? 'sectionSwitch_btn--performances' : ''}`}><span>In-person Performances</span></Link>
+      <div className="top-nav__image-buttons-wrapper">
+        <Link
+          to="/virtual/"
+          className={`image-button ${
+            activeSisteSection !== 'virtual' ? 'sectionSwitch_btn--virtual' : ''
+          }`}
+        >
+          <span>Virtual Entertainment</span>
+        </Link>
+        <Link
+          to="/programming/"
+          className={`image-button ${
+            activeSisteSection !== 'programming'
+              ? 'sectionSwitch_btn--programming'
+              : ''
+          }`}
+        >
+          <span>In-person Programs</span>
+        </Link>
+        <Link
+          to="/performances/"
+          className={`image-button ${
+            activeSisteSection !== 'performances'
+              ? 'sectionSwitch_btn--performances'
+              : ''
+          }`}
+        >
+          <span>In-person Performances</span>
+        </Link>
         {/* <a href='/programming/camp-package/' className='image-button'><span>Our Camp Package</span></a> */}
         {/* <a href='/virtual/recommended-camps/' className='image-button'><span>Camp Partnerships</span></a> */}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
 
 const mobileSectionButtonsStyles = {
   display: ['flex', null, 'none'],
@@ -109,10 +167,10 @@ const mobileSectionButtonsStyles = {
     lineHeight: 'tight',
     '&.active': {
       bg: '#301111',
-      color: 'white'
+      color: 'white',
     },
     '&:nth-of-type(3)': {
-      borderRight: '0px solid'
-    }
-  }
-}
+      borderRight: '0px solid',
+    },
+  },
+};

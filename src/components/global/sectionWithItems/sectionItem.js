@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
+import { jsx } from 'theme-ui';
 
-import BlockContent from '@sanity/block-content-to-react'
-import serializers from '../../../utils/serializers'
+import BlockContent from '@sanity/block-content-to-react';
+import serializers from '../../../utils/serializers';
 
-const SectionItem = ({title, content, i}) => {
+const SectionItem = ({ title, content, i }) => {
   return (
     <div sx={sectionItemStyles}>
-      <div className='number'>{i + 1}</div>
+      <div className="number">{i + 1}</div>
       <h3>{title}</h3>
       <BlockContent blocks={content} serializers={serializers} />
     </div>
-  )
-}
+  );
+};
 
-export default SectionItem
+export default SectionItem;
 
 const sectionItemStyles = {
   variant: 'styles',
@@ -31,9 +31,9 @@ const sectionItemStyles = {
     width: '100px',
     lineHeight: '100px',
     textAlign: 'center',
-    p: '0'
+    p: '0',
   },
   p: {
-    fontSize: 1
-  }
-}
+    fontSize: 1,
+  },
+};

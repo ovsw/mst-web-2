@@ -1,1 +1,1 @@
-export {default} from './TestimonialsSlideshow.js'
+export { default } from './TestimonialsSlideshow.js';

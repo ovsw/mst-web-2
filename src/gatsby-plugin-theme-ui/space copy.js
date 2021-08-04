@@ -31,7 +31,7 @@ const space = {
       xl: '4rem 4rem 4rem 4rem',
       '2xl': '8rem 8rem 8rem 8rem',
       '3xl': '16rem 16rem 16rem 16rem',
-      '4xl': '32rem 32rem 32rem 32rem'
+      '4xl': '32rem 32rem 32rem 32rem',
     },
     insetSquish: {
       default: '1rem 1rem 1rem 1rem',
@@ -41,7 +41,7 @@ const space = {
       xl: '2rem 4rem 2rem 4rem',
       '2xl': '4rem 8rem 4rem 8rem',
       '3xl': '8rem 16rem 8rem 16rem',
-      '4xl': '16rem 32rem 16rem 32rem'
+      '4xl': '16rem 32rem 16rem 32rem',
     },
     inline: {
       default: '0 1rem 0 0',
@@ -52,7 +52,7 @@ const space = {
       xl: '0 4rem 0 0',
       '2xl': '0 8rem 0 0',
       '3xl': '0 16rem 0 0',
-      '4xl': '0 32rem 0 0'
+      '4xl': '0 32rem 0 0',
     },
     stack: {
       default: '0 0 1rem 0',
@@ -63,10 +63,10 @@ const space = {
       xl: '0 0 4rem 0',
       '2xl': '0 0 8rem 0',
       '3xl': '0 0 16rem 0',
-      '4xl': '0 0 32rem 0'
-    }
-  }
-}
+      '4xl': '0 0 32rem 0',
+    },
+  },
+};
 
 // const space = {
 //   space: {
@@ -83,4 +83,4 @@ const space = {
 //   }
 // }
 
-export default space
+export default space;

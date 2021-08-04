@@ -2,26 +2,26 @@ const sections = {
   sections: {
     default: {
       py: [5, null, 6, 6],
-      bg: 'background'
+      bg: 'background',
     },
     withMargin: {
       my: [5, null, 6, 6],
-      bg: 'background'
+      bg: 'background',
     },
     tight: {
-      bg: 'background'
+      bg: 'background',
     },
     white: {
-      bg: 'white'
+      bg: 'white',
     },
     primary: {
-      bg: 'primary'
+      bg: 'primary',
     },
     rteSection: {
       py: [3, null, null, 3],
-      bg: 'background'
-    }
-  }
-}
+      bg: 'background',
+    },
+  },
+};
 
-export default sections
+export default sections;

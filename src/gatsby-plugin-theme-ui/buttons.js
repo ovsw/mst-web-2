@@ -19,31 +19,31 @@ export const sharedButtonStyles = {
   fontSize: 2,
   transition: 'all 300ms ease',
   ':hover': {
-    transform: 'translateY(-3px)'
-  }
-}
+    transform: 'translateY(-3px)',
+  },
+};
 
 const buttons = {
   buttons: {
     simple: {
       ...sharedButtonStyles,
-      color: 'light'
+      color: 'light',
     },
     simpleAccent: {
       ...sharedButtonStyles,
       backgroundColor: 'primary',
-      color: 'light!important'
+      color: 'light!important',
     },
     simpleAccentDark: {
       ...sharedButtonStyles,
       backgroundColor: 'secondary',
-      color: 'white!important'
+      color: 'white!important',
     },
     simpleWhite: {
       ...sharedButtonStyles,
       backgroundColor: 'white',
       color: 'black',
-      border: 'none'
+      border: 'none',
     },
     outline: {
       ...sharedButtonStyles,
@@ -57,8 +57,8 @@ const buttons = {
       '&:hover': {
         backgroundColor: 'primary',
         color: 'light',
-        borderColor: 'transparent'
-      }
+        borderColor: 'transparent',
+      },
     },
     bordered: {
       ...sharedButtonStyles,
@@ -70,8 +70,8 @@ const buttons = {
       fontWeight: 'bold',
       borderRadius: 'default',
       '&:hover': {
-        backgroundColor: 'primaryHover'
-      }
+        backgroundColor: 'primaryHover',
+      },
     },
     disabled: {
       ...sharedButtonStyles,
@@ -81,7 +81,7 @@ const buttons = {
       opacity: 0.5,
       color: 'white',
       fontWeight: 'bold',
-      borderRadius: 'default'
+      borderRadius: 'default',
     },
     '3D': {
       ...sharedButtonStyles,
@@ -95,8 +95,8 @@ const buttons = {
       borderRadius: 'default',
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
-        transform: 'translateY(-1px)'
-      }
+        transform: 'translateY(-1px)',
+      },
     },
     '3DAccent': {
       ...sharedButtonStyles,
@@ -110,8 +110,8 @@ const buttons = {
       borderRadius: 'default',
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
-        transform: 'translateY(-1px)'
-      }
+        transform: 'translateY(-1px)',
+      },
     },
     elevated: {
       ...sharedButtonStyles,
@@ -126,8 +126,8 @@ const buttons = {
       borderRadius: 'default',
       boxShadow: 'default',
       '&:hover': {
-        backgroundColor: 'gray.1'
-      }
+        backgroundColor: 'gray.1',
+      },
     },
     navToggle: {
       display: ['inline', 'inline', 'none'],
@@ -147,8 +147,8 @@ const buttons = {
         border: 'none',
         borderBottomWidth: '4px',
         borderBottomStyle: 'solid',
-        borderBottomColor: 'primaryHover'
-      }
+        borderBottomColor: 'primaryHover',
+      },
     },
     mobileMenuExpand: {
       pt: 2,
@@ -166,10 +166,10 @@ const buttons = {
       color: 'white',
       fontWeight: 'bold',
       '&:hover': {
-        backgroundColor: 'primaryHover'
-      }
-    }
-  }
-}
+        backgroundColor: 'primaryHover',
+      },
+    },
+  },
+};
 
-export default buttons
+export default buttons;

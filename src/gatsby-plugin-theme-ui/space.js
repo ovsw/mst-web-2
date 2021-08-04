@@ -9,8 +9,8 @@ const space = {
     '8rem', // 128 -6
     '16rem', // 256 -7
     '32rem', // 512 -8
-    '1px'
-  ]
-}
+    '1px',
+  ],
+};
 
-export default space
+export default space;

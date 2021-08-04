@@ -26,9 +26,9 @@ const colors = {
       '#718096',
       '#4a5568',
       '#2d3748',
-      '#1a202c'
-    ]
-  }
-}
+      '#1a202c',
+    ],
+  },
+};
 
-export default colors
+export default colors;

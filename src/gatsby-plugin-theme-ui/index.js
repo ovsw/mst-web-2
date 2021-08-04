@@ -1,19 +1,19 @@
 // import {redirectTo} from '@reach/router'
 // import {relative} from 'path'
 
-import breakpoints from './breakpoints'
-import typography from './typography'
-import colors from './colors'
-import sizes from './sizes'
-import space from './space'
-import shadows from './shadows'
-import links from './links'
-import buttons, {sharedButtonStyles} from './buttons'
-import sections from './sections'
-import inputs from './inputs'
-import lists from './lists'
-import misc from './misc'
-import {skewedRight} from './common'
+import breakpoints from './breakpoints';
+import typography from './typography';
+import colors from './colors';
+import sizes from './sizes';
+import space from './space';
+import shadows from './shadows';
+import links from './links';
+import buttons, { sharedButtonStyles } from './buttons';
+import sections from './sections';
+import inputs from './inputs';
+import lists from './lists';
+import misc from './misc';
+import { skewedRight } from './common';
 
 const sharedHeadingStyles = {
   fontWeight: 'heading',
@@ -21,8 +21,8 @@ const sharedHeadingStyles = {
   fontFamily: 'heading',
   m: 0,
   mb: 3,
-  color: 'secondary'
-}
+  color: 'secondary',
+};
 
 export default {
   ...breakpoints,
@@ -41,11 +41,11 @@ export default {
     container: {
       maxWidth: ['1200px'],
       mx: 'auto',
-      px: [2, 3, null, 3, 0]
+      px: [2, 3, null, 3, 0],
     },
     TwoCol: {
-      width: ['full', null, null, '1/2']
-    }
+      width: ['full', null, null, '1/2'],
+    },
   },
   utils: {
     pin: {
@@ -53,31 +53,31 @@ export default {
       top: 0,
       bottom: 0,
       left: 0,
-      right: 0
+      right: 0,
     },
     textCenter: {
-      textAlign: 'center'
+      textAlign: 'center',
     },
     skewedright: {
-      ...skewedRight
-    }
+      ...skewedRight,
+    },
   },
   styles: {
     root: {
       margin: 0,
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body'
+      fontWeight: 'body',
     },
     Header: {
       display: 'block',
       zIndex: '5',
-      position: 'relative'
+      position: 'relative',
     },
     Layout: {
       color: 'text',
       fontFamily: 'body',
-      fontSize: '2'
+      fontSize: '2',
     },
     a: {
       color: 'primaryDark',
@@ -87,8 +87,8 @@ export default {
       pb: '-0.1em',
       ':hover': {
         color: 'primary',
-        borderColor: 'primary'
-      }
+        borderColor: 'primary',
+      },
     },
     '.contentButton': {
       ...sharedButtonStyles,
@@ -97,54 +97,54 @@ export default {
       ':hover': {
         bg: 'primary',
         transform: 'translateY(-3px)',
-        color: 'secondary'
-      }
+        color: 'secondary',
+      },
     },
     '.darkBg .contentButton': {
       color: 'secondary',
       bg: 'white',
       ':hover': {
         bg: 'secondary',
-        color: 'white'
-      }
+        color: 'white',
+      },
     },
     p: {
       fontSize: 2,
       lineHeight: 'body',
-      color: 'textBody'
+      color: 'textBody',
     },
     h1: {
       ...sharedHeadingStyles,
-      fontSize: [5, 6, 7, 8]
+      fontSize: [5, 6, 7, 8],
     },
     h2: {
       ...sharedHeadingStyles,
       fontSize: [4, 5, 6, 6],
-      mb: 4
+      mb: 4,
     },
     '* + h2, * + h1': {
-      mt: 5
+      mt: 5,
     },
     h3: {
       ...sharedHeadingStyles,
       fontSize: [3, 4, 5, 5],
       fontWeight: '300',
-      m: 0
+      m: 0,
     },
     '* + h3': {
-      mt: 4
+      mt: 4,
     },
     h4: {
       ...sharedHeadingStyles,
-      fontSize: [3, 3, 4]
+      fontSize: [3, 3, 4],
     },
     h5: {
       ...sharedHeadingStyles,
-      fontSize: 2
+      fontSize: 2,
     },
     h6: {
       ...sharedHeadingStyles,
-      fontSize: 1
+      fontSize: 1,
     },
     code: {},
     pre: {},
@@ -152,14 +152,14 @@ export default {
       bg: 'muted',
       border: 0,
       height: '1px',
-      m: 3
+      m: 3,
     },
     img: {
-      mt: 4
+      mt: 4,
     },
     '.contentImage': {
       m: '0',
-      p: '0'
+      p: '0',
     },
     figure: {
       '&.left': {
@@ -169,11 +169,11 @@ export default {
         px: 4,
         display: 'block',
         img: {
-          width: 'full'
+          width: 'full',
         },
         figcaption: {
-          mb: 2
-        }
+          mb: 2,
+        },
       },
       '&.right': {
         float: ['none', null, null, null, 'right'],
@@ -182,20 +182,19 @@ export default {
         px: 4,
         display: 'block',
         img: {
-          width: 'full'
+          width: 'full',
         },
         figcaption: {
-          mb: 2
-        }
-      }
+          mb: 2,
+        },
+      },
     },
     figcaption: {
       textAlign: 'center',
       fontSize: 1,
       mt: 0,
       mb: 4,
-      fontStyle: 'italic'
-
+      fontStyle: 'italic',
     },
     table: {
       width: '100%',
@@ -204,9 +203,9 @@ export default {
         td: {
           borderTop: '2px solid',
           borderColor: 'gray.3',
-          padding: 2
-        }
-      }
-    }
-  }
-}
+          padding: 2,
+        },
+      },
+    },
+  },
+};

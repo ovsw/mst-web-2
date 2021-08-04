@@ -1,5 +1,5 @@
 .button {
-  padding: .5rem .9rem;
+  padding: 0.5rem 0.9rem;
   background-color: blue;
   border: none;
   font-size: 1.1rem;
@@ -11,15 +11,17 @@
   display: inline-block;
 }
 .button:hover {
-    background-color: white;
-    color: blue; 
-  }
+  background-color: white;
+  color: blue;
+}
 .content-anchor {
   position: relative;
   top: -100px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }

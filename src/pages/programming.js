@@ -1,13 +1,11 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import { jsx } from 'theme-ui';
+import React from 'react'; // eslint-disable-line
 
-import ProgrammingLandingContent from '../components/programming-landing-content'
+import ProgrammingLandingContent from '../components/programming-landing-content';
 
 const ProgrammingLadnging = () => {
-  return (
-    <ProgrammingLandingContent />
-  )
-}
+  return <ProgrammingLandingContent />;
+};
 
-export default ProgrammingLadnging
+export default ProgrammingLadnging;

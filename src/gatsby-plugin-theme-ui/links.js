@@ -5,9 +5,9 @@ const links = {
       fontWeight: 'bold',
       color: 'secondary',
       cursor: 'pointer',
-      display: ['inline', 'inline', 'none']
-    }
-  }
-}
+      display: ['inline', 'inline', 'none'],
+    },
+  },
+};
 
-export default links
+export default links;

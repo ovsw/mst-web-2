@@ -4,81 +4,81 @@
 }
 
 .testimonial-slider {
-    padding-top: 4rem;
-    padding-bottom: 4rem
-
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
- 
+
 .testimonial-slider #light-slider li {
-      display: none;
-    }
+  display: none;
+}
 .testimonial-slider #light-slider.lightSlider li {
-        display: block;
-      }
+  display: block;
+}
 .testimonial-slider__heading {
-    padding-top: 2rem;
-    text-align: center;
-    margin: 0;
-    color: #87CC2F;
-  }
+  padding-top: 2rem;
+  text-align: center;
+  margin: 0;
+  color: #87cc2f;
+}
 .testimonial-slider__content {
-    padding: 1rem;
-    font-style: italic;
-    font-family: Jubilat, serif;
-    text-align: center;
-  }
+  padding: 1rem;
+  font-style: italic;
+  font-family: Jubilat, serif;
+  text-align: center;
+}
 @media (min-width: 768px) {
-.testimonial-slider__content {
-      max-width: 500px;
-      margin: 0 auto
+  .testimonial-slider__content {
+    max-width: 500px;
+    margin: 0 auto;
   }
- }
+}
 @media (min-width: 1024px) {
-.testimonial-slider__content {
-      max-width: 800px
+  .testimonial-slider__content {
+    max-width: 800px;
   }
- }
+}
 .testimonial-slider__text {
-    font-size: 1.2rem;
-    position: relative;
-  }
+  font-size: 1.2rem;
+  position: relative;
+}
 @media (min-width: 1024px) {
-.testimonial-slider__text {
-      font-size: 1.5rem
+  .testimonial-slider__text {
+    font-size: 1.5rem;
   }
- }
+}
 .testimonial-slider__text span {
-      font-size: 7rem;
-      line-height: 0em;
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: rgba(135, 204, 47, 0.5);
-    }
+  font-size: 7rem;
+  line-height: 0em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(135, 204, 47, 0.5);
+}
 .testimonial-slider__text .endquote {
-      position: absolute;
-      bottom: -1rem;
-      right: 0;
-      left: auto;
-      top: auto;
-    }
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  left: auto;
+  top: auto;
+}
 .testimonial-slider__author {
-    font-family: europa, sans-serif;
-    color: rgba(48, 17, 17, 0.7);
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
+  font-family: europa, sans-serif;
+  color: rgba(48, 17, 17, 0.7);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 .testimonial-slider__company {
-    font-weight: 300;
-    font-size: 1rem;
-  }
-.lSSlideOuter .lSPager.lSpg>li a {
+  font-weight: 300;
+  font-size: 1rem;
+}
+.lSSlideOuter .lSPager.lSpg > li a {
   width: 1rem;
   height: 1rem;
   background-color: rgba(48, 17, 17, 0.7);
 }
-.lSSlideOuter .lSPager.lSpg>li.active a, .lSSlideOuter .lSPager.lSpg>li:hover a {
-  background-color: #87CC2F;
+.lSSlideOuter .lSPager.lSpg > li.active a,
+.lSSlideOuter .lSPager.lSpg > li:hover a {
+  background-color: #87cc2f;
 }
 .lSSlideOuter .lSPager.lSpg {
   margin: 1rem;

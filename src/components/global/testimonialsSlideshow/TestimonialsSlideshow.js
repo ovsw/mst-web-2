@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import { jsx } from 'theme-ui';
+import React from 'react'; // eslint-disable-line
 
-import TestimonialSlide from './TestimonialSlide'
-import Slider from 'react-slick'
+import TestimonialSlide from './TestimonialSlide';
+import Slider from 'react-slick';
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import './TestimonialSlider.css'
+import './TestimonialSlider.css';
 
-const TestimonialsSlideshow = ({data}) => {
-  const {testimonials} = data
+const TestimonialsSlideshow = ({ data }) => {
+  const { testimonials } = data;
   const slickSettings = {
     dots: true,
     infinite: true,
@@ -19,7 +19,7 @@ const TestimonialsSlideshow = ({data}) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: 1,
-    customPaging: i => (
+    customPaging: () => (
       <div
         sx={{
           width: '1rem',
@@ -32,26 +32,33 @@ const TestimonialsSlideshow = ({data}) => {
           borderRadius: '100%',
           '.slick-active & ': {
             bg: 'primary',
-            color: 'light'
-          }
+            color: 'light',
+          },
         }}
       />
-    )
-  }
+    ),
+  };
 
   return (
     <section
-      className='testimonial-slider' sx={{
+      className="testimonial-slider"
+      sx={{
         // variant: 'sections.default',
-        bg: '#fbfde8'
+        bg: '#fbfde8',
       }}
     >
       <Slider {...slickSettings}>
-        {testimonials.map(({_id, content, name, role}) => <TestimonialSlide key={_id} content={content} name={name} role={role} />)}
+        {testimonials.map(({ _id, content, name, role }) => (
+          <TestimonialSlide
+            key={_id}
+            content={content}
+            name={name}
+            role={role}
+          />
+        ))}
       </Slider>
     </section>
+  );
+};
 
-  )
-}
-
-export default TestimonialsSlideshow
+export default TestimonialsSlideshow;

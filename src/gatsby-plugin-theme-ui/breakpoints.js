@@ -11,8 +11,8 @@ const breakpoints = {
     '1024px', // 4 - iPad Landscape
     '1280px', // 5 - Md Desk
     '1440px', // 6 - Large desk
-    '1800px' // 7  - Largest desk
-  ]
-}
+    '1800px', // 7  - Largest desk
+  ],
+};
 
-export default breakpoints
+export default breakpoints;

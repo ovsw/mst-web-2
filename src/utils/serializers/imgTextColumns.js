@@ -1,38 +1,40 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import { jsx } from 'theme-ui';
+import React from 'react'; // eslint-disable-line
 // import Img from 'gatsby-image'
 
-import BlockContent from '@sanity/block-content-to-react'
-import serializers from './index'
+import BlockContent from '@sanity/block-content-to-react';
+import serializers from './index';
 
-import {buildImageObj} from '../helpers' // cn
-import {imageUrlFor} from '../image-url'
+import { buildImageObj } from '../helpers'; // cn
+import { imageUrlFor } from '../image-url';
 
-export default ({node}) => {
-  const thumbSize = {width: 200, height: 200}
+export default ({ node }) => {
+  const thumbSize = { width: 200, height: 200 };
   const imageUrl = imageUrlFor(buildImageObj(node.image))
     .width(thumbSize.width)
     // .height(Math.floor((9 / 16) * 600))
     .height(thumbSize.height)
     .auto('format')
-    .url()
+    .url();
 
   return (
-
     <div sx={styles}>
-
-      <div className='imageWrapper'>
-        <img className='side-image rounded-image' src={imageUrl} alt={node.alt} width='200' />
+      <div className="imageWrapper">
+        <img
+          className="side-image rounded-image"
+          src={imageUrl}
+          alt={node.alt}
+          width="200"
+        />
       </div>
-      <div className='text'>
+      <div className="text">
         <h3>{node.title}</h3>
         <BlockContent blocks={node.text} serializers={serializers} />
       </div>
     </div>
-
-  )
-}
+  );
+};
 
 const styles = {
   mx: [0, null, null, '-8rem'],
@@ -55,11 +57,11 @@ const styles = {
       maxWidth: 'none',
       borderRadius: '50%',
       border: '3px solid white',
-      boxShadow: '0 0 12px rgba(0, 0, 0, 0.2)'
-    }
+      boxShadow: '0 0 12px rgba(0, 0, 0, 0.2)',
+    },
   },
   '.text': {
     flex: '1 1 70%',
-    px: [3, null, null, 0]
-  }
-}
+    px: [3, null, null, 0],
+  },
+};

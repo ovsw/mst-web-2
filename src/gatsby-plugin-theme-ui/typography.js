@@ -4,14 +4,14 @@ const typography = {
     // 'serif': 'Georgia, Cambria, "Times New Roman", Times, serif',
     mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
     heading: 'Jubilat, sans-serif',
-    body: '"Europa", sans-serif'
+    body: '"Europa", sans-serif',
   },
   text: {
     heading: {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
-      letterSpacing: 'heading'
+      letterSpacing: 'heading',
     },
     mainHeading: {
       fontFamily: 'heading',
@@ -20,7 +20,7 @@ const typography = {
       fontSize: [5, null, 6, 7, 8, null],
       letterSpacing: '-.03em',
       mt: 0,
-      mb: 5
+      mb: 5,
     },
     // display: {
     //   fontFamily: 'heading',
@@ -30,8 +30,8 @@ const typography = {
     //   fontSize: [ 5, 6, 7 ]
     // },
     caps: {
-      textTransform: 'uppercase'
-    }
+      textTransform: 'uppercase',
+    },
   },
   fontSizes: [
     '0.875rem',
@@ -42,7 +42,7 @@ const typography = {
     '2.25rem',
     '3rem',
     '4rem',
-    '5rem'
+    '5rem',
   ],
   fontWeights: {
     hairline: '100',
@@ -55,7 +55,7 @@ const typography = {
     extrabold: '800',
     black: '900',
     body: '400',
-    heading: '400'
+    heading: '400',
   },
   letterSpacings: {
     tighter: '-0.05em',
@@ -64,7 +64,7 @@ const typography = {
     wide: '0.025em',
     wider: '0.05em',
     widest: '0.1em',
-    heading: '-.03em'
+    heading: '-.03em',
   },
   lineHeights: {
     none: '1',
@@ -74,8 +74,8 @@ const typography = {
     relaxed: '1.625',
     loose: '2',
     body: '1.625',
-    heading: '1'
-  }
-}
+    heading: '1',
+  },
+};
 
-export default typography
+export default typography;

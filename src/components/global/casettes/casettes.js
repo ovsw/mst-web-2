@@ -1,34 +1,36 @@
 /** @jsx jsx */
-import {jsx, Container, Styled} from 'theme-ui'
-import React, {useContext} from 'react' // eslint-disable-line
+import { jsx, Container, Styled } from 'theme-ui';
+import React, { useContext } from 'react'; // eslint-disable-line
 
-import Casette from './casette'
+import Casette from './casette';
 
 // import './casettes.css'
 
-const Casettes = ({data}) => {
-  const {title, items} = data
+const Casettes = ({ data }) => {
+  const { title, items } = data;
   return (
-    <section className='slidecards' sx={{variant: 'sections.default'}}>
+    <section className="slidecards" sx={{ variant: 'sections.default' }}>
       <Container>
         {title && (
-          <div className='slidecards__heading-wrapper'>
+          <div className="slidecards__heading-wrapper">
             <Styled.h2>{title}</Styled.h2>
           </div>
         )}
         <div
-          className='slidecards__cards-wrapper1' sx={{
+          className="slidecards__cards-wrapper1"
+          sx={{
             display: 'flex',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
           }}
         >
           {items.map((casette, i) => (
             <div
-              key={casette.buttonUrl} sx={{
+              key={casette.buttonUrl}
+              sx={{
                 px: '1rem',
                 pb: '2rem',
                 width: ['full', null, '1/3'],
-                display: 'flex'
+                display: 'flex',
               }}
             >
               <Casette {...casette} i={i} />
@@ -37,10 +39,10 @@ const Casettes = ({data}) => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Casettes
+export default Casettes;
 
 // const casettesTempContent = [
 //   {

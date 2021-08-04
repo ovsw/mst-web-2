@@ -1,63 +1,58 @@
-import {useStaticQuery, graphql} from 'gatsby'
-import {mapEdgesToNodes} from '../utils/helpers'
+import { useStaticQuery, graphql } from 'gatsby';
+import { mapEdgesToNodes } from '../utils/helpers';
 
 export const usePerformancesMetaData = () => {
-  const {allSanityPagePerformance} = useStaticQuery(
+  const { allSanityPagePerformance } = useStaticQuery(
     graphql`
-    query {
-      allSanityPagePerformance {
-        edges {
-          node {
-            content {
-              _type
-              main {
-                slug {
-                  current
+      query {
+        allSanityPagePerformance {
+          edges {
+            node {
+              content {
+                _type
+                main {
+                  slug {
+                    current
+                  }
+                  title
                 }
-                title
-              }
-              performance {
-                ageRange
-                hollidays
-                noOfParticipants
-                performanceType
-                themes
-                image {
-                  asset {
-                    _id
+                performance {
+                  ageRange
+                  hollidays
+                  noOfParticipants
+                  performanceType
+                  themes
+                  image {
+                    asset {
+                      _id
+                    }
                   }
                 }
               }
+              _id
             }
-            _id
           }
         }
       }
-    }
-  `
-  )
+    `
+  );
 
-  const performanceNodes = mapEdgesToNodes(allSanityPagePerformance)
+  const performanceNodes = mapEdgesToNodes(allSanityPagePerformance);
 
   const formattedPerformanceMetaData = performanceNodes.map(
-    (
-      {
-        content: {
-          main: {
-            slug,
-            title
-          },
-          performance: {
-            ageRange,
-            hollidays,
-            noOfParticipants,
-            performanceType,
-            themes,
-            image
-          }
-        }
-      }
-    ) => {
+    ({
+      content: {
+        main: { slug, title },
+        performance: {
+          ageRange,
+          hollidays,
+          noOfParticipants,
+          performanceType,
+          themes,
+          image,
+        },
+      },
+    }) => {
       const formattedPerformance = {
         title: title,
         slug: slug.current,
@@ -66,13 +61,13 @@ export const usePerformancesMetaData = () => {
         noOfParticipants: noOfParticipants,
         performanceType: performanceType,
         themes: themes,
-        image: image
-      }
+        image: image,
+      };
       // console.log(formattedPerformance)
-      return formattedPerformance
+      return formattedPerformance;
     }
-  )
+  );
   // console.log(formattedPerformanceMetaData)
 
-  return formattedPerformanceMetaData
-}
+  return formattedPerformanceMetaData;
+};

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import { jsx } from 'theme-ui';
+import React from 'react'; // eslint-disable-line
 
 // import {buildImageObj} from '../../utils/helpers' // cn
 // import {imageUrlFor} from '../../utils/image-url'
@@ -8,8 +8,8 @@ import React from 'react' // eslint-disable-line
 // import FloatedImageWText from './floatedImageWText'
 // import BlockImageWText from './blockImageWText'
 
-const ImageWTextOverModule = ({data}) => {
-  const {theme} = data
+const ImageWTextOverModule = ({ data }) => {
+  const { theme } = data;
   return (
     <>
       {/* {theme === 'overlapping' && <FloatedImageWText {...data} />}
@@ -17,10 +17,10 @@ const ImageWTextOverModule = ({data}) => {
       {theme === 'overlapping' && <p>Text Overlapping w Image</p>}
       {theme === 'sideBySide' && <p>Text Side by side w Image</p>}
     </>
-  )
-}
+  );
+};
 
-export default ImageWTextOverModule
+export default ImageWTextOverModule;
 
 // const desktopImageUrl = imageUrlFor(buildImageObj(image))
 //   .width(1920)

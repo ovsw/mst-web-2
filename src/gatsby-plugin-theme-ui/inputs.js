@@ -12,8 +12,8 @@ const inputs = {
       boxShadow: 'default',
       '&:focus': {
         outline: 'none',
-        boxShadow: 'outline'
-      }
+        boxShadow: 'outline',
+      },
     },
     inline: {
       py: 2,
@@ -30,8 +30,8 @@ const inputs = {
       '&:focus': {
         outline: 'none',
         borderColor: 'primary',
-        backgroundColor: 'white'
-      }
+        backgroundColor: 'white',
+      },
     },
     underline: {
       py: 2,
@@ -49,10 +49,10 @@ const inputs = {
       '&:focus': {
         outline: 'none',
         borderColor: 'primary',
-        backgroundColor: 'white'
-      }
-    }
-  }
-}
+        backgroundColor: 'white',
+      },
+    },
+  },
+};
 
-export default inputs
+export default inputs;

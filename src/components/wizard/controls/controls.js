@@ -1,29 +1,32 @@
 /** @jsx jsx */
-import {jsx} from 'theme-ui'
-import React from 'react' // eslint-disable-line
+import { jsx } from 'theme-ui';
+import React from 'react'; // eslint-disable-line
 
 // import TagButton from './tag-button'
 
-const Controls = ({passingTags, allFilterClickListener}) => {
-  const {performanceType} = passingTags
+const Controls = ({ passingTags, allFilterClickListener }) => {
+  // const { performanceType } = passingTags;
 
   const buildTagControls = (title, tagGroup) => {
     return (
-      <div className='row tagRow'>
+      <div className="row tagRow">
         <p>{title}</p>
-        {Object.keys(passingTags[tagGroup]).map(key => {
-          const tag = passingTags[tagGroup][key]
+        {Object.keys(passingTags[tagGroup]).map((key) => {
+          const tag = passingTags[tagGroup][key];
           return (
             <button
-              key={tag.title} data-name={key} onClick={e => allFilterClickListener(e, tagGroup)}
+              key={tag.title}
+              data-name={key}
+              onClick={(e) => allFilterClickListener(e, tagGroup)}
               className={tag.isActive ? 'active' : ''}
-            >{tag.title}
+            >
+              {tag.title}
             </button>
-          )
+          );
         })}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div sx={controlsStyles}>
@@ -41,10 +44,10 @@ const Controls = ({passingTags, allFilterClickListener}) => {
         Interactive
       </button> */}
     </div>
-  )
-}
+  );
+};
 
-export default Controls
+export default Controls;
 
 const controlsStyles = {
   button: {
@@ -54,7 +57,7 @@ const controlsStyles = {
     mr: 2,
     mb: 2,
     '&.active': {
-      backgroundColor: 'primary'
-    }
-  }
-}
+      backgroundColor: 'primary',
+    },
+  },
+};

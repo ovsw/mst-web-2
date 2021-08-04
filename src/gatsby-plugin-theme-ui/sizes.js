@@ -58,8 +58,8 @@ const sizes = {
     '11/12': '91.666667%',
     full: '100%',
     screenHeight: '100vh',
-    screenWidth: '100vw'
-  }
-}
+    screenWidth: '100vw',
+  },
+};
 
-export default sizes
+export default sizes;
