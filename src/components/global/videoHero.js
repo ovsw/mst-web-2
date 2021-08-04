@@ -12,7 +12,7 @@ const VideoHero = ({ data }) => {
   const [courtainClass, setCourtainClass] = useState('');
   useEffect(() => {
     setCourtainClass('open');
-  });
+  }, []);
   let videoSource = null;
   let posterBg = null;
   let heroType = 'Performances';
@@ -71,10 +71,12 @@ const VideoHero = ({ data }) => {
       <img
         className={`${s.hero__leftCurtain} ${s[courtainClass]}`}
         src="/images/left-courtain.png"
+        alt="stage courtain left"
       />
       <img
         className={`${s.hero__rightCurtain} ${s[courtainClass]}`}
         src="/images/right-courtain.png"
+        alt="stage courtain right"
       />
     </section>
   );
