@@ -49,14 +49,17 @@ const TestimonialsSlideshow = ({ module }) => {
       }}
     >
       <Slider {...slickSettings}>
-        {testimonials.map(({ _key, content, name, role }) => (
-          <TestimonialSlide
-            key={_key}
-            content={content}
-            name={name}
-            role={role}
-          />
-        ))}
+        {testimonials.map((testimonial) => {
+          const { _id, content, name, role } = testimonial;
+          return (
+            <TestimonialSlide
+              key={_id}
+              content={content}
+              name={name}
+              role={role}
+            />
+          );
+        })}
       </Slider>
     </section>
   );
