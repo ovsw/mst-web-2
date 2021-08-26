@@ -23,6 +23,7 @@ async function createGenericPages(graphql, actions, reporter) {
                 }
               }
             }
+            _type
           }
         }
       }
@@ -39,6 +40,7 @@ async function createGenericPages(graphql, actions, reporter) {
                 }
               }
             }
+            _type
           }
         }
       }
@@ -58,6 +60,7 @@ async function createGenericPages(graphql, actions, reporter) {
       content: {
         main: { slug },
       },
+      _type,
       // seoNoIndex
     } = edge.node;
     const path = `/${slug.current}/`;
@@ -67,7 +70,7 @@ async function createGenericPages(graphql, actions, reporter) {
     createPage({
       path,
       component: require.resolve('./src/templates/page.js'),
-      context: { id },
+      context: { id, _type },
     });
   });
 }
@@ -80,12 +83,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // REDIRECTS
 
   // redirect home page to /virtual/
-  createRedirect({
-    fromPath: '/',
-    toPath: '/virtual/',
-    isPermanent: true,
-    force: true,
-  });
+  // createRedirect({
+  //   fromPath: '/',
+  //   toPath: '/virtual/',
+  //   isPermanent: true,
+  //   force: true,
+  // });
 
   // fixed redirects
 

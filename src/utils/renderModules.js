@@ -6,7 +6,8 @@ const RenderModules = (modules) => {
     return modules.map((module) => {
       return (
         <React.Fragment key={module._key}>
-          <Modules type={module._type} reactModule={module} />
+          <Modules module={module} />
+          {/* <p>{module._type}</p> */}
         </React.Fragment>
       );
     });

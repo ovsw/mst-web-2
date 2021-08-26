@@ -9,7 +9,8 @@ import RenderModules from '../utils/renderModules';
 
 const Page = (props) => {
   const { data } = props;
-  const page = data && data.page && data.page.content;
+  const page = data.page != null ? data.page.content : data.pageHidden.content;
+  // const page = data && data.page && data.page.content;
   console.log('page:', page);
 
   return (
@@ -26,6 +27,18 @@ export default Page;
 export const query = graphql`
   query GenericPageTemplateQuery($id: String!) {
     page: sanityPage(id: { eq: $id }) {
+      content {
+        main {
+          slug {
+            current
+          }
+          _rawModules(resolveReferences: { maxDepth: 9 })
+          title
+        }
+        _rawMeta(resolveReferences: { maxDepth: 9 })
+      }
+    }
+    pageHidden: sanityPageHidden(id: { eq: $id }) {
       content {
         main {
           slug {

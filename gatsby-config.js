@@ -41,6 +41,7 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
@@ -48,7 +49,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'open sans :300,400,400i,700', // you can also specify font weights and styles
+          `open sans`, // you can also specify font weights and styles
         ],
         display: 'swap',
       },
@@ -91,6 +92,13 @@ module.exports = {
         token: process.env.SANITY_READ_TOKEN,
         watchMode: !isProd,
         overlayDrafts: !isProd,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sanity-image',
+      options: {
+        // Sanity project info (required)
+        ...clientConfig.sanity,
       },
     },
     {

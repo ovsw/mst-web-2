@@ -1,19 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react'; // eslint-disable-line
-import BackgroundImage from 'gatsby-background-image';
+// import BackgroundImage from 'gatsby-background-image';
 
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import clientConfig from '../../../../client-config';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import BlockContent from '@sanity/block-content-to-react';
 import serializers from '../../../utils/serializers';
 
 const FloatedImageWText = ({ image, text, layout }) => {
   const r = layout === 'right' ? '-' : '';
-  const fluidProps = getFluidGatsbyImage(
+  const sectionImage = getGatsbyImageData(
     image.asset.id,
-    { maxWidth: 1200 },
+    { maxWidth: 1200, height: 800 },
     clientConfig.sanity
   );
   return (
@@ -58,8 +59,9 @@ const FloatedImageWText = ({ image, text, layout }) => {
           </div>
         </div>
       </div>
-      <BackgroundImage
-        fluid={fluidProps}
+      <GatsbyImage
+        image={sectionImage}
+        alt="placeholder"
         sx={{
           backgroundPosition: 'center center',
           gridColumnStart: [`${r}1`, null, null, `${r}3`],
@@ -68,6 +70,16 @@ const FloatedImageWText = ({ image, text, layout }) => {
           gridRowEnd: ['2', null, '5'],
         }}
       />
+      {/* <BackgroundImage
+        fluid={fluidProps}
+        sx={{
+          backgroundPosition: 'center center',
+          gridColumnStart: [`${r}1`, null, null, `${r}3`],
+          gridColumnEnd: [`${r}6`, null, null, `${r}5`],
+          gridRowStart: '1',
+          gridRowEnd: ['2', null, '5'],
+        }}
+      /> */}
     </section>
   );
 };
